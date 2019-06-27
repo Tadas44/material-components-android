@@ -21,7 +21,7 @@ import android.view.View;
  * Callback to be invoked when the view undergoes a transformation (e.g., translation or scale).
  * This is particularly useful to react to animations applied to a view, such as the cutout of the
  * {@link com.google.android.material.bottomappbar.BottomAppBar} reacting to the {@link
- * com.google.android.material.floatingactionbutton.FloatingActionButton}.
+ * com.google.android.material.floatingactionbutton.FloatingActionButton2}.
  */
 public interface TransformationListener<T extends View> {
   /**

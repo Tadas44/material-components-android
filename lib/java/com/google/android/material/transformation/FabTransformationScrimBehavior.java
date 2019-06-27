@@ -25,7 +25,7 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import com.google.android.material.animation.AnimatorSetCompat;
 import com.google.android.material.animation.MotionTiming;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton2;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,7 +35,7 @@ import java.util.List;
 
 /**
  * Behavior that should be attached to a scrim that should appear when a {@link
- * FloatingActionButton} is {@link FloatingActionButton#setExpanded(boolean)} expanded}.
+ * FloatingActionButton2} is {@link FloatingActionButton2#setExpanded(boolean)} expanded}.
  */
 public class FabTransformationScrimBehavior extends ExpandableTransformationBehavior {
 
@@ -56,7 +56,7 @@ public class FabTransformationScrimBehavior extends ExpandableTransformationBeha
 
   @Override
   public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
-    return dependency instanceof FloatingActionButton;
+    return dependency instanceof FloatingActionButton2;
   }
 
   @Override

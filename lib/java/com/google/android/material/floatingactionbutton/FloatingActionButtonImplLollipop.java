@@ -49,7 +49,7 @@ import java.util.List;
 class FloatingActionButtonImplLollipop extends FloatingActionButtonImpl {
 
   FloatingActionButtonImplLollipop(
-      FloatingActionButton view, ShadowViewDelegate shadowViewDelegate) {
+      FloatingActionButton2 view, ShadowViewDelegate shadowViewDelegate) {
     super(view, shadowViewDelegate);
   }
 

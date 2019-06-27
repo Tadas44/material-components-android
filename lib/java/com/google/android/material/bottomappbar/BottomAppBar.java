@@ -40,9 +40,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.Px;
 import com.google.android.material.animation.TransformationListener;
 import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.floatingactionbutton.FloatingActionButton.OnVisibilityChangedListener;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton2;
+import com.google.android.material.floatingactionbutton.FloatingActionButton2;
+import com.google.android.material.floatingactionbutton.FloatingActionButton2.OnVisibilityChangedListener;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.EdgeTreatment;
@@ -69,13 +69,13 @@ import java.util.List;
 
 /**
  * The Bottom App Bar is an extension of Toolbar that supports a shaped background that "cradles" an
- * attached {@link FloatingActionButton}. A FAB is anchored to {@link BottomAppBar} by calling
+ * attached {@link FloatingActionButton2}. A FAB is anchored to {@link BottomAppBar} by calling
  * {@link CoordinatorLayout.LayoutParams#setAnchorId(int)}, or by setting {@code app:layout_anchor}
  * on the FAB in xml.
  *
  * <p>Note: The Material Design Guidelines caution against using an {@link
- * ExtendedFloatingActionButton} with a {@link BottomAppBar}, so there is limited support for that
- * use case. {@link ExtendedFloatingActionButton} can be anchored to the {@link BottomAppBar}, but
+ * ExtendedFloatingActionButton2} with a {@link BottomAppBar}, so there is limited support for that
+ * use case. {@link ExtendedFloatingActionButton2} can be anchored to the {@link BottomAppBar}, but
  * currently animations and the cutout are not supported.
  *
  * <p>There are two modes which determine where the FAB is shown relative to the {@link
@@ -151,9 +151,9 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
   }
 
   /**
-   * If the {@link FloatingActionButton} is actually cradled in the {@link BottomAppBar} or if the
-   * {@link FloatingActionButton} is detached which will happen when the {@link
-   * FloatingActionButton} is not visible, or when the {@link BottomAppBar} is scrolled off the
+   * If the {@link FloatingActionButton2} is actually cradled in the {@link BottomAppBar} or if the
+   * {@link FloatingActionButton2} is detached which will happen when the {@link
+   * FloatingActionButton2} is not visible, or when the {@link BottomAppBar} is scrolled off the
    * screen.
    */
   private boolean fabAttached = true;
@@ -173,16 +173,16 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
       };
 
   /** Listens to any transformations applied to the FAB so the cutout can react. */
-  TransformationListener<FloatingActionButton> fabTransformationListener =
-      new TransformationListener<FloatingActionButton>() {
+  TransformationListener<FloatingActionButton2> fabTransformationListener =
+      new TransformationListener<FloatingActionButton2>() {
         @Override
-        public void onScaleChanged(FloatingActionButton fab) {
+        public void onScaleChanged(FloatingActionButton2 fab) {
           materialShapeDrawable.setInterpolation(
               fab.getVisibility() == View.VISIBLE ? fab.getScaleY() : 0);
         }
 
         @Override
-        public void onTranslationChanged(FloatingActionButton fab) {
+        public void onTranslationChanged(FloatingActionButton2 fab) {
           float horizontalOffset = fab.getTranslationX();
           if (getTopEdgeTreatment().getHorizontalOffset() != horizontalOffset) {
             getTopEdgeTreatment().setHorizontalOffset(horizontalOffset);
@@ -331,7 +331,7 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
 
   /**
    * Returns the vertical offset for the fab cutout. An offset of 0 indicates the vertical center of
-   * the {@link FloatingActionButton} is positioned on the top edge.
+   * the {@link FloatingActionButton2} is positioned on the top edge.
    */
   @Dimension
   public float getCradleVerticalOffset() {
@@ -339,8 +339,8 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
   }
 
   /**
-   * Sets the vertical offset, in pixels, of the {@link FloatingActionButton} being cradled. An
-   * offset of 0 indicates the vertical center of the {@link FloatingActionButton} is positioned on
+   * Sets the vertical offset, in pixels, of the {@link FloatingActionButton2} being cradled. An
+   * offset of 0 indicates the vertical center of the {@link FloatingActionButton2} is positioned on
    * the top edge.
    */
   public void setCradleVerticalOffset(@Dimension float verticalOffset) {
@@ -481,9 +481,9 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
   }
 
   @Nullable
-  private FloatingActionButton findDependentFab() {
+  private FloatingActionButton2 findDependentFab() {
     View view = findDependentView();
-    return view instanceof FloatingActionButton ? (FloatingActionButton) view : null;
+    return view instanceof FloatingActionButton2 ? (FloatingActionButton2) view : null;
   }
 
   @Nullable
@@ -495,7 +495,7 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
 
     List<View> dependents = ((CoordinatorLayout) getParent()).getDependents(this);
     for (View v : dependents) {
-      if (v instanceof FloatingActionButton || v instanceof ExtendedFloatingActionButton) {
+      if (v instanceof FloatingActionButton2 || v instanceof ExtendedFloatingActionButton2) {
         return v;
       }
     }
@@ -504,7 +504,7 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
   }
 
   private boolean isFabVisibleOrWillBeShown() {
-    FloatingActionButton fab = findDependentFab();
+    FloatingActionButton2 fab = findDependentFab();
     return fab != null && fab.isOrWillBeShown();
   }
 
@@ -512,12 +512,12 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
    * Creates the default animation for moving a fab between alignment modes. Can be overridden by
    * extending classes to create a custom animation. Animations that should be executed should be
    * added to the animators list. The default animation defined here calls {@link
-   * FloatingActionButton#hide()} and {@link FloatingActionButton#show()} rather than using custom
+   * FloatingActionButton2#hide()} and {@link FloatingActionButton2#show()} rather than using custom
    * animations.
    */
   protected void createFabDefaultXAnimation(
       final @FabAlignmentMode int targetMode, List<Animator> animators) {
-    final FloatingActionButton fab = findDependentFab();
+    final FloatingActionButton2 fab = findDependentFab();
 
     if (fab == null || fab.isOrWillBeHidden()) {
       return;
@@ -528,11 +528,11 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
     fab.hide(
         new OnVisibilityChangedListener() {
           @Override
-          public void onHidden(FloatingActionButton fab) {
+          public void onHidden(FloatingActionButton2 fab) {
             fab.setTranslationX(getFabTranslationX(targetMode));
             fab.show(new OnVisibilityChangedListener() {
               @Override
-              public void onShown(FloatingActionButton fab) {
+              public void onShown(FloatingActionButton2 fab) {
                 dispatchAnimationEnd();
               }
             });
@@ -772,7 +772,7 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
    *
    * @param fab the FAB to link the animations with
    */
-  private void addFabAnimationListeners(@NonNull FloatingActionButton fab) {
+  private void addFabAnimationListeners(@NonNull FloatingActionButton2 fab) {
     fab.addOnHideAnimationListener(fabAnimationListener);
     fab.addOnShowAnimationListener(
         new AnimatorListenerAdapter() {
@@ -781,7 +781,7 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
             fabAnimationListener.onAnimationStart(animation);
 
             // Any time the fab is being shown make sure it is in the correct position.
-            FloatingActionButton fab = findDependentFab();
+            FloatingActionButton2 fab = findDependentFab();
             if (fab != null) {
               fab.setTranslationX(getFabTranslationX());
             }
@@ -822,7 +822,7 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
 
   /**
    * Behavior designed for use with {@link BottomAppBar} instances. Its main function is to link a
-   * dependent {@link FloatingActionButton} so that it can be shown docked in the cradle.
+   * dependent {@link FloatingActionButton2} so that it can be shown docked in the cradle.
    */
   public static class Behavior extends HideBottomViewOnScrollBehavior<BottomAppBar> {
 
@@ -837,12 +837,12 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
         BottomAppBar child = viewRef.get();
 
         // If the child BAB no longer exists, remove the listener.
-        if (child == null || !(v instanceof FloatingActionButton)) {
+        if (child == null || !(v instanceof FloatingActionButton2)) {
           v.removeOnLayoutChangeListener(this);
           return;
         }
 
-        FloatingActionButton fab = ((FloatingActionButton) v);
+        FloatingActionButton2 fab = ((FloatingActionButton2) v);
 
         fab.getMeasuredContentRect(fabContentRect);
         int height = fabContentRect.height();
@@ -891,8 +891,8 @@ public class BottomAppBar extends Toolbar implements AttachedBehavior {
             (CoordinatorLayout.LayoutParams) dependentView.getLayoutParams();
         fabLayoutParams.anchorGravity = Gravity.CENTER | Gravity.TOP;
 
-        if (dependentView instanceof FloatingActionButton) {
-          FloatingActionButton fab = ((FloatingActionButton) dependentView);
+        if (dependentView instanceof FloatingActionButton2) {
+          FloatingActionButton2 fab = ((FloatingActionButton2) dependentView);
 
           // Always update the BAB if the fab is laid out.
           fab.addOnLayoutChangeListener(fabLayoutListener);

@@ -19,13 +19,13 @@ package com.google.android.material.bottomappbar;
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
 import androidx.annotation.RestrictTo;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton2;
 import com.google.android.material.shape.EdgeTreatment;
 import com.google.android.material.shape.ShapePath;
 
 /**
  * Top edge treatment for the bottom app bar which "cradles" a circular {@link
- * FloatingActionButton}.
+ * FloatingActionButton2}.
  *
  * <p>This edge features a downward semi-circular cutout from the edge line. The two corners created
  * by the cutout can optionally be rounded. The circular cutout can also support a vertically offset
@@ -51,9 +51,9 @@ public class BottomAppBarTopEdgeTreatment extends EdgeTreatment implements Clone
    * @param fabMargin the margin in pixels between the cutout and the fab.
    * @param roundedCornerRadius the radius, in pixels, of the rounded corners created by the cutout.
    *     A value of 0 will produce a sharp cutout.
-   * @param cradleVerticalOffset vertical offset, in pixels, of the {@link FloatingActionButton}
+   * @param cradleVerticalOffset vertical offset, in pixels, of the {@link FloatingActionButton2}
    *     being cradled. An offset of 0 indicates the vertical center of the {@link
-   *     FloatingActionButton} is positioned on the top edge.
+   *     FloatingActionButton2} is positioned on the top edge.
    */
   public BottomAppBarTopEdgeTreatment(
       float fabMargin, float roundedCornerRadius, float cradleVerticalOffset) {
@@ -183,8 +183,8 @@ public class BottomAppBarTopEdgeTreatment extends EdgeTreatment implements Clone
   }
 
   /**
-   * Returns vertical offset, in pixels, of the {@link FloatingActionButton} being cradled. An
-   * offset of 0 indicates the vertical center of the {@link FloatingActionButton} is positioned on
+   * Returns vertical offset, in pixels, of the {@link FloatingActionButton2} being cradled. An
+   * offset of 0 indicates the vertical center of the {@link FloatingActionButton2} is positioned on
    * the top edge.
    */
   float getCradleVerticalOffset() {
@@ -192,8 +192,8 @@ public class BottomAppBarTopEdgeTreatment extends EdgeTreatment implements Clone
   }
 
   /**
-   * Sets the vertical offset, in pixels, of the {@link FloatingActionButton} being cradled. An
-   * offset of 0 indicates the vertical center of the {@link FloatingActionButton} is positioned on
+   * Sets the vertical offset, in pixels, of the {@link FloatingActionButton2} being cradled. An
+   * offset of 0 indicates the vertical center of the {@link FloatingActionButton2} is positioned on
    * the top edge.
    */
   void setCradleVerticalOffset(float cradleVerticalOffset) {

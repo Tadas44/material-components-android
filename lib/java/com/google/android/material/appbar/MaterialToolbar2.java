@@ -37,9 +37,9 @@ import android.util.AttributeSet;
  * elevation overlays for Dark Themes.
  *
  * <p>Regarding the Dark Theme elevation overlays, it's important to note that the Material {@link
- * AppBarLayout} component also provides elevation overlay support, and operates under the
+ * AppBarLayout2} component also provides elevation overlay support, and operates under the
  * assumption that the child {@code Toolbar} does not have a background. While a {@code
- * MaterialToolbar} with a transparent background can be used within an {@link AppBarLayout}, in
+ * MaterialToolbar} with a transparent background can be used within an {@link AppBarLayout2}, in
  * terms of elevation overlays its main value comes into play with the standalone {@code Toolbar}
  * case, when using the {@code Widget.MaterialComponents.Toolbar.Surface} style with elevation.
  *
@@ -53,19 +53,19 @@ import android.util.AttributeSet;
  *         android:layout_height=&quot;wrap_content&quot;/&gt;
  * </pre>
  */
-public class MaterialToolbar extends Toolbar {
+public class MaterialToolbar2 extends Toolbar {
 
   private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Toolbar;
 
-  public MaterialToolbar(Context context) {
+  public MaterialToolbar2(Context context) {
     this(context, null);
   }
 
-  public MaterialToolbar(Context context, AttributeSet attrs) {
+  public MaterialToolbar2(Context context, AttributeSet attrs) {
     this(context, attrs, R.attr.toolbarStyle);
   }
 
-  public MaterialToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
+  public MaterialToolbar2(Context context, AttributeSet attrs, int defStyleAttr) {
     super(createThemedContext(context, attrs, defStyleAttr, DEF_STYLE_RES), attrs, defStyleAttr);
     // Ensure we are using the correctly themed context rather than the context that was passed in.
     context = getContext();

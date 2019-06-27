@@ -15,7 +15,7 @@
   ~ limitations under the License.
 -->
 <resources>
-  <declare-styleable name="FloatingActionButton">
+  <declare-styleable name="FloatingActionButton2">
     <!-- Background for the FloatingActionButton -->
     <attr name="backgroundTint"/>
     <attr name="backgroundTintMode"/>
@@ -65,7 +65,7 @@
     <attr name="behavior_autoHide" format="boolean"/>
   </declare-styleable>
 
-  <declare-styleable name="ExtendedFloatingActionButton">
+  <declare-styleable name="ExtendedFloatingActionButton2">
     <!-- Elevation for the ExtendedFloatingActionButton. -->
     <attr name="elevation"/>
     <!-- Motion spec for show animation. This should be a MotionSpec resource. -->
