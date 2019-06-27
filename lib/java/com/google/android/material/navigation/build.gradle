@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+
 
 archivesBaseName = getArchivesBaseName(project.name)
 version = rootProject.ext.mdcLibraryVersion
@@ -29,10 +29,4 @@ android {
   }
 }
 
-uploadArchives {
-  repositories {
-    mavenDeployer {
-      repository(url: rootProject.ext.mavenRepoUrl)
-    }
-  }
-}
+
