@@ -183,7 +183,7 @@ abstract class HeaderScrollingViewBehavior extends ViewOffsetBehavior<View> {
 
   /**
    * Set the distance that this view should overlap any {@link
-   * com.google.android.material.appbar.AppBarLayout}.
+   * com.google.android.material.appbar.AppBarLayout2}.
    *
    * @param overlayTop the distance in px
    */
@@ -193,7 +193,7 @@ abstract class HeaderScrollingViewBehavior extends ViewOffsetBehavior<View> {
 
   /**
    * Returns the distance that this view should overlap any {@link
-   * com.google.android.material.appbar.AppBarLayout}.
+   * com.google.android.material.appbar.AppBarLayout2}.
    */
   public final int getOverlayTop() {
     return overlayTop;

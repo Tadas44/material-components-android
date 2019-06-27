@@ -35,7 +35,7 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.annotation.internal.DoNotInstrument;
 
-/** Tests for {@link com.google.android.material.appbar.MaterialToolbar}. */
+/** Tests for {@link com.google.android.material.appbar.MaterialToolbar2}. */
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = VERSION_CODES.LOLLIPOP)
 @DoNotInstrument
@@ -59,7 +59,7 @@ public class MaterialToolbarTest {
   @Test
   public void
       givenMinimalUsage_whenInflated_backgroundIsMaterialShapeDrawableWithTransparentColor() {
-    MaterialToolbar materialToolbar = inflate(R.layout.test_toolbar);
+    MaterialToolbar2 materialToolbar = inflate(R.layout.test_toolbar);
 
     assertThat(materialToolbar.getBackground()).isInstanceOf(MaterialShapeDrawable.class);
     assertThat(getMaterialShapeDrawable(materialToolbar).getFillColor().getDefaultColor())
@@ -68,14 +68,14 @@ public class MaterialToolbarTest {
 
   @Test
   public void givenCustomNonColorBackground_whenInflated_backgroundIsNotMaterialShapeDrawable() {
-    MaterialToolbar materialToolbar = inflate(R.layout.test_toolbar_custom_background);
+    MaterialToolbar2 materialToolbar = inflate(R.layout.test_toolbar_custom_background);
 
     assertThat(materialToolbar.getBackground()).isNotInstanceOf(MaterialShapeDrawable.class);
   }
 
   @Test
   public void givenSurfaceStyle_whenInflated_backgroundIsMaterialShapeDrawableWithSurfaceColor() {
-    MaterialToolbar materialToolbar = inflate(R.layout.test_toolbar_surface);
+    MaterialToolbar2 materialToolbar = inflate(R.layout.test_toolbar_surface);
 
     assertThat(materialToolbar.getBackground()).isInstanceOf(MaterialShapeDrawable.class);
     assertThat(getMaterialShapeDrawable(materialToolbar).getFillColor().getDefaultColor())
@@ -84,7 +84,7 @@ public class MaterialToolbarTest {
 
   @Test
   public void givenElevation_whenInflated_backgroundIsMaterialShapeDrawableWithElevation() {
-    MaterialToolbar materialToolbar = inflate(R.layout.test_toolbar_elevation);
+    MaterialToolbar2 materialToolbar = inflate(R.layout.test_toolbar_elevation);
 
     assertThat(materialToolbar.getBackground()).isInstanceOf(MaterialShapeDrawable.class);
     assertThat(getMaterialShapeDrawable(materialToolbar).getElevation()).isEqualTo(elevation);
@@ -92,7 +92,7 @@ public class MaterialToolbarTest {
 
   @Test
   public void givenNoElevation_whenSetElevation_setsMaterialShapeDrawableElevation() {
-    MaterialToolbar materialToolbar = inflate(R.layout.test_toolbar);
+    MaterialToolbar2 materialToolbar = inflate(R.layout.test_toolbar);
 
     ViewCompat.setElevation(materialToolbar, elevation);
 
@@ -100,11 +100,11 @@ public class MaterialToolbarTest {
     assertThat(getMaterialShapeDrawable(materialToolbar).getElevation()).isEqualTo(elevation);
   }
 
-  private MaterialToolbar inflate(@LayoutRes int layoutResId) {
-    return (MaterialToolbar) activity.getLayoutInflater().inflate(layoutResId, null);
+  private MaterialToolbar2 inflate(@LayoutRes int layoutResId) {
+    return (MaterialToolbar2) activity.getLayoutInflater().inflate(layoutResId, null);
   }
 
-  private MaterialShapeDrawable getMaterialShapeDrawable(MaterialToolbar materialToolbar) {
+  private MaterialShapeDrawable getMaterialShapeDrawable(MaterialToolbar2 materialToolbar) {
     return (MaterialShapeDrawable) materialToolbar.getBackground();
   }
 }

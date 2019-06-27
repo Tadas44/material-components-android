@@ -19,7 +19,7 @@ package com.google.android.material.floatingactionbutton;
 import com.google.android.material.R;
 
 import static android.os.Build.VERSION_CODES.LOLLIPOP;
-import static com.google.android.material.floatingactionbutton.FloatingActionButton.SIZE_MINI;
+import static com.google.android.material.floatingactionbutton.FloatingActionButton2.SIZE_MINI;
 import static com.google.android.material.internal.ViewUtils.dpToPx;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -55,7 +55,7 @@ public class FabTest {
 
   @Test
   public void ensureMinTouchTarget_is48dp() {
-    FloatingActionButton fab = createFabForTest(true);
+    FloatingActionButton2 fab = createFabForTest(true);
 
     float expectedSize = dpToPx(activity, MIN_SIZE_FOR_ALLY_DP);
 
@@ -72,7 +72,7 @@ public class FabTest {
 
   @Test
   public void ensureMinTouchTargetFalse_isLessThan48dp() {
-    FloatingActionButton fab = createFabForTest(false);
+    FloatingActionButton2 fab = createFabForTest(false);
 
     float minSize = dpToPx(activity, MIN_SIZE_FOR_ALLY_DP);
 
@@ -85,8 +85,8 @@ public class FabTest {
     assertTrue(fab.getMeasuredHeight() < minSize);
   }
 
-  private FloatingActionButton createFabForTest(boolean ensureMinTouchTarget) {
-    FloatingActionButton fab = new FloatingActionButton(activity);
+  private FloatingActionButton2 createFabForTest(boolean ensureMinTouchTarget) {
+    FloatingActionButton2 fab = new FloatingActionButton2(activity);
     float dimen = dpToPx(activity, MIN_SIZE_FOR_ALLY_DP);
     fab.setSize(SIZE_MINI);
     fab.setEnsureMinTouchTargetSize(ensureMinTouchTarget);

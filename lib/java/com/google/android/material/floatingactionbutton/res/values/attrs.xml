@@ -15,7 +15,7 @@
   ~ limitations under the License.
 -->
 <resources>
-  <declare-styleable name="FloatingActionButton">
+  <declare-styleable name="FloatingActionButton2">
     <!-- Background for the FloatingActionButton -->
     <attr name="backgroundTint"/>
     <attr name="backgroundTintMode"/>
@@ -24,14 +24,7 @@
     <attr name="rippleColor"/>
 
     <!-- Size for the FAB. If fabCustomSize is set, this will be ignored. -->
-    <attr name="fabSize">
-      <!-- A size which will change based on the window size. -->
-      <enum name="auto" value="-1"/>
-      <!-- The normal sized button. -->
-      <enum name="normal" value="0"/>
-      <!-- The mini sized button. -->
-      <enum name="mini" value="1"/>
-    </attr>
+    <attr name="fabSize"/>
     <!-- Custom size for the FAB. If this is set, fabSize will be ignored. -->
     <attr name="fabCustomSize" format="dimension"/>
     <!-- Elevation value for the FAB -->
@@ -65,7 +58,7 @@
     <attr name="behavior_autoHide" format="boolean"/>
   </declare-styleable>
 
-  <declare-styleable name="ExtendedFloatingActionButton">
+  <declare-styleable name="ExtendedFloatingActionButton2">
     <!-- Elevation for the ExtendedFloatingActionButton. -->
     <attr name="elevation"/>
     <!-- Motion spec for show animation. This should be a MotionSpec resource. -->

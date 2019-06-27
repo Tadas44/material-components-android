@@ -52,7 +52,7 @@ import com.google.android.material.circularreveal.CircularRevealHelper;
 import com.google.android.material.circularreveal.CircularRevealWidget;
 import com.google.android.material.circularreveal.CircularRevealWidget.CircularRevealScrimColorProperty;
 import com.google.android.material.circularreveal.CircularRevealWidget.RevealInfo;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton2;
 import androidx.core.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Pair;
@@ -68,7 +68,7 @@ import java.util.List;
 
 /**
  * Abstract base behavior for any non-scrim view that should appear when a {@link
- * FloatingActionButton} is {@link FloatingActionButton#setExpanded(boolean)} expanded}.
+ * FloatingActionButton2} is {@link FloatingActionButton2#setExpanded(boolean)} expanded}.
  */
 public abstract class FabTransformationBehavior extends ExpandableTransformationBehavior {
 
@@ -96,9 +96,9 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
           "This behavior cannot be attached to a GONE view. Set the view to INVISIBLE instead.");
     }
 
-    if (dependency instanceof FloatingActionButton) {
+    if (dependency instanceof FloatingActionButton2) {
       int expandedComponentIdHint =
-          ((FloatingActionButton) dependency).getExpandedComponentIdHint();
+          ((FloatingActionButton2) dependency).getExpandedComponentIdHint();
       return expandedComponentIdHint == 0 || expandedComponentIdHint == child.getId();
     }
     return false;
@@ -373,7 +373,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
 
     float revealCenterX = calculateRevealCenterX(dependency, child, spec.positioning);
     float revealCenterY = calculateRevealCenterY(dependency, child, spec.positioning);
-    ((FloatingActionButton) dependency).getContentRect(tmpRect);
+    ((FloatingActionButton2) dependency).getContentRect(tmpRect);
     float dependencyRadius = tmpRect.width() / 2f;
 
     Animator animator;

@@ -23,7 +23,7 @@ import androidx.annotation.AnimatorRes;
 import androidx.annotation.CallSuper;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.animation.Positioning;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton2;
 import androidx.core.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -35,7 +35,7 @@ import java.util.Map;
 
 /**
  * Behavior that should be attached to any sheet that should appear when a {@link
- * FloatingActionButton} is {@link FloatingActionButton#setExpanded(boolean)} expanded}.
+ * FloatingActionButton2} is {@link FloatingActionButton2#setExpanded(boolean)} expanded}.
  *
  * <p>A sheet usually has some width and height that's smaller than the screen, has an elevation,
  * and may have a scrim underneath.

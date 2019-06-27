@@ -43,7 +43,7 @@ import com.google.android.material.shape.ShapeAppearancePathProvider;
 import androidx.core.graphics.ColorUtils;
 
 /**
- * A Drawable that draws borders for {@link FloatingActionButton}
+ * A Drawable that draws borders for {@link FloatingActionButton2}
  *
  * @hide
  */

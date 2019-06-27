@@ -135,7 +135,7 @@ class FloatingActionButtonImpl {
   static final int[] ENABLED_STATE_SET = {android.R.attr.state_enabled};
   static final int[] EMPTY_STATE_SET = new int[0];
 
-  final FloatingActionButton view;
+  final FloatingActionButton2 view;
   final ShadowViewDelegate shadowViewDelegate;
 
   private final Rect tmpRect = new Rect();
@@ -147,7 +147,7 @@ class FloatingActionButtonImpl {
   private ViewTreeObserver.OnPreDrawListener preDrawListener;
 
   @SuppressWarnings("initialization")
-  FloatingActionButtonImpl(FloatingActionButton view, ShadowViewDelegate shadowViewDelegate) {
+  FloatingActionButtonImpl(FloatingActionButton2 view, ShadowViewDelegate shadowViewDelegate) {
     this.view = view;
     this.shadowViewDelegate = shadowViewDelegate;
 
