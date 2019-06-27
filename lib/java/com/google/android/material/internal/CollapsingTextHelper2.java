@@ -50,7 +50,7 @@ import android.view.View;
  * @hide
  */
 @RestrictTo(LIBRARY_GROUP)
-public final class CollapsingTextHelper {
+public final class CollapsingTextHelper2 {
 
   // Pre-JB-MR2 doesn't support HW accelerated canvas scaled text so we will workaround it
   // by using our own texture
@@ -127,7 +127,7 @@ public final class CollapsingTextHelper {
   private float expandedShadowDy;
   private ColorStateList expandedShadowColor;
 
-  public CollapsingTextHelper(View view) {
+  public CollapsingTextHelper2(View view) {
     this.view = view;
 
     textPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG | Paint.SUBPIXEL_TEXT_FLAG);

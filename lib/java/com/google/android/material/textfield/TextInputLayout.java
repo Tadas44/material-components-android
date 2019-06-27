@@ -48,7 +48,7 @@ import androidx.annotation.StyleRes;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.CheckableImageButton;
-import com.google.android.material.internal.CollapsingTextHelper;
+import com.google.android.material.internal.CollapsingTextHelper2;
 import com.google.android.material.internal.DescendantOffsetUtils;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
@@ -367,7 +367,7 @@ public class TextInputLayout extends LinearLayout {
   // Only used for testing
   private boolean hintExpanded;
 
-  final CollapsingTextHelper collapsingTextHelper = new CollapsingTextHelper(this);
+  final CollapsingTextHelper2 collapsingTextHelper = new CollapsingTextHelper2(this);
 
   private boolean hintAnimationEnabled;
   private ValueAnimator animator;
